@@ -97,7 +97,7 @@ namespace Microsoft.Owin.Compression
             var bestAccept = new Accept { Encoding = "identity", Quality = 0 };
             IEncoding bestEncoding = null;
 
-            IList<string> acceptEncoding = request.Headers.GetValues("accept-encoding");
+            IList<string> acceptEncoding = request.Headers.GetCommaSeparatedValues("accept-encoding");
             if (acceptEncoding != null)
             {
                 foreach (var segment in acceptEncoding)
